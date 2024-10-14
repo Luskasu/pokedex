@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #343434;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #232323;
+  }
+}
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  .w-66{
+    width: 264px;
+  }
+  .h-18{
+    height: 72px;
+  }
+  .w-18{
+    width: 72px;
+  }
+  .font-outline-1 {
+    font-size: large;
+    font-weight: bold;
+    color: #b3bdbd;
+    -webkit-text-stroke: 0.8px #595959;
+  }
+  .pixel-art{
+    image-rendering: pixelated;
+  }
+}
+
+@font-face {
+  font-family: 'Minecraft';
+  src: url('fonts/Minecraft.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
