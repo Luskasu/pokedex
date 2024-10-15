@@ -11,11 +11,10 @@ interface ITypes {
 }
 
 export default function Types({ types }: ITypes) {
-  if (!types) return
 
   return (
-    <div className="ml-2 mr-2 m-1 w-48 flex justify-between">
-      {types.map(t => (
+    <div className="ml-2 mr-2 m-1 w-48 h-[30px] flex justify-between">
+      {types ? types.map(t => (
         <Image
           key={t.type.name}
           src={`${typeSpritesUrl}/${typesID[t.type.name]}.png`}
@@ -24,7 +23,7 @@ export default function Types({ types }: ITypes) {
           alt=""
           className="pixel-art"
         ></Image>
-      ))
+      )) : ""
       }
     </div >
   );

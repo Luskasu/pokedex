@@ -17,22 +17,22 @@ export default function PokemonIcon({ id, name, setNewPokemon }: IPokemonIcon) {
 
   return (
     <div className="">
-      <button onClick={() =>handleClick()} className="w-24 h-24 bg-[#fbfbfb] overflow-hidden flex items-end pt-2 pl-2 pr-2 border-[3px] border-[#b3bdbd]">
-        <div className="relative w-32 h-32 flex items-center">
+      <button onClick={() =>handleClick()} className="w-20 h-20 bg-[#fbfbfb] overflow-hidden flex items-end pt-2 pl-2 pr-2 border-[3px] border-[#a2a2a2]">
+        <div className="relative w-28 h-28 flex items-center">
           <div className="w-full h-8 absolute z-10 font-pokemondp font-bold text-2xl">
 
 
-            <div className="w-[64px] h-2 flex justify-between items-center">
+            <div className="w-[64px] h-4 flex justify-between items-center">
               <div className="w-7" >
                 <Image
                   src={pokeballSm}
                   alt=""
                   width={20}
-                  height={10}
+                  height={20}
                   className="pixel-art"
                 />
               </div>
-              <p className="w-[54px]"> {id} </p>
+              <p className=" h-8 w-[54px]"> {id} </p>
             </div>
           </div>
 

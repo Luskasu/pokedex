@@ -34,28 +34,40 @@ export default function PokemonCard({ name }: IPokemonCard) {
 
   return (
     <div>
-      <div className="flex">
-        <Image
-          src={pokemon?.sprites?.front_default}
-          alt={pokemon?.name}
-          width={256}
-          height={256}
-          className="pixel-art"
-        ></Image>
-        <div>
+      <div className="flex justify-between">
+        <div className="w-[220px]">
+          <Image
+            src={pokemon?.sprites?.front_default}
+            alt={pokemon?.name}
+            width={220}
+            height={220}
+            className="pixel-art"
+          ></Image>
+        </div>
+
+        <div className="w-72 mr-3 flex flex-col items-end">
           <PokemonName id={pokemon.id} name={pokemon.name} species={species?.genera?.[7]?.genus} />
-          <div className="flex grid-cols">
-            <FootPrint></FootPrint>
-            <div>
-              <Types types={pokemon?.types} />
-              <div className="w-66 flex">
+          <div className="h-32 flex">
+
+            <div className="w-64 mr-[7px] flex">
+              <div className="w-16">
+              <FootPrint />
+
+              </div>
+
+              <div className="w-40 flex flex-col">
+                <Types types={pokemon?.types} />
                 <HtWt ht={pokemon?.height} wt={pokemon?.weight} />
               </div>
+
             </div>
+
+
+
           </div>
         </div>
       </div>
-      <TextBox text={species?.flavor_text_entries?.[28]?.flavor_text}/>
+      <TextBox text={species?.flavor_text_entries?.[28]?.flavor_text} />
     </div>
 
   );
