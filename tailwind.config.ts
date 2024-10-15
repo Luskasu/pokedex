@@ -13,7 +13,7 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        'minecraft': ['Minecraft', 'sans-serif'],
+        'pokemondp': ['PokemonDP', 'sans-serif'],
       },
       imageRendering: {
         'pixelated': 'pixelated',

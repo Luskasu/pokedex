@@ -7,6 +7,7 @@ import PokemonName from "./PokemonName";
 import Types from "./Types";
 import FootPrint from "./FootPrint";
 import HtWt from "./HtWt";
+import TextBox from "./TextBox";
 
 export interface IPokemonCard {
   name: string;
@@ -32,30 +33,30 @@ export default function PokemonCard({ name }: IPokemonCard) {
 
 
   return (
-    <div className="flex">
-      <Image
-        src={pokemon?.sprites?.front_default}
-        alt={pokemon?.name}
-        width={256}
-        height={256}
-        className="pixel-art"
-      ></Image>
-      <div>
-        <PokemonName id={pokemon.id} name={pokemon.name} species={species?.genera?.[7]?.genus} />
-        <div className="flex grid-cols">
-          <FootPrint></FootPrint>
-          <div>
-            <Types types={pokemon?.types} />
-            <div className="w-66 flex">
-              <HtWt ht={pokemon?.height} wt={pokemon?.weight} />
+    <div>
+      <div className="flex">
+        <Image
+          src={pokemon?.sprites?.front_default}
+          alt={pokemon?.name}
+          width={256}
+          height={256}
+          className="pixel-art"
+        ></Image>
+        <div>
+          <PokemonName id={pokemon.id} name={pokemon.name} species={species?.genera?.[7]?.genus} />
+          <div className="flex grid-cols">
+            <FootPrint></FootPrint>
+            <div>
+              <Types types={pokemon?.types} />
+              <div className="w-66 flex">
+                <HtWt ht={pokemon?.height} wt={pokemon?.weight} />
+              </div>
             </div>
           </div>
         </div>
-
-
       </div>
-
-
+      <TextBox text={species?.flavor_text_entries?.[28]?.flavor_text}/>
     </div>
+
   );
 }
