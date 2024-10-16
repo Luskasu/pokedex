@@ -34,7 +34,7 @@ export default function PokemonIcon({ id, name, setNewPokemon }: IPokemonIcon) {
           </div>
 
           <Image
-            src={`/images/miniatures/${name}.png`}
+            src={`https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/${name}.png`}
             alt={name}
             layout="fill"
             sizes="(max-width: 68px) 68px, (max-width: 56px) 56px"
