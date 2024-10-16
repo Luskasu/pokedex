@@ -1,5 +1,5 @@
 import Image from "next/image";
-import pokeball from "../../../../assets/images/pokeball-icon-2.png"
+import pokeball from "../../../../public/images/pokeball-icon-2.png"
 
 interface IPokemonName {
   id: number;
