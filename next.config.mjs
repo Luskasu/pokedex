@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   reactStrictMode: true,
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
@@ -9,6 +11,7 @@ const nextConfig = {
       }
     ]
   },
+  basePath: process.env.NODE_ENV === 'production' ? '/pokedex' : '',
 };
 
 export default nextConfig;

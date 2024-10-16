@@ -20,7 +20,6 @@ interface IPokemonSearch {
 
 function LoadList({ search, setNewPokemon }: ILoadList) {
   const pokemonsArray = pokemons.results.map((pkm) => (pkm.name))
-
   const pokemonList = pokemons.results.filter((pkm) => (pkm.name.startsWith(search)))
   return (
     <>
@@ -33,9 +32,6 @@ function LoadList({ search, setNewPokemon }: ILoadList) {
 
 export default function PokemonList({ setNewPokemon }: IPokemonList) {
   const [pokemonSearch, setPokemonSearch] = useState<IPokemonSearch>({ search: "" })
-
-
-
   function HandleChange(event: React.ChangeEvent<HTMLInputElement>) {
     setPokemonSearch({ search: event.target.value });
   }
@@ -69,8 +65,6 @@ export default function PokemonList({ setNewPokemon }: IPokemonList) {
           }
         </div>
       </div>
-
-
     </div>
 
   )
