@@ -7,15 +7,15 @@ interface IPokemonIcon {
   setNewPokemon: (name: string) => void;
 }
 
-
-
 export default function PokemonIcon({ id, name, setNewPokemon }: IPokemonIcon) {
   function handleClick() {
     setNewPokemon(name)
   }
   return (
     <div className="">
-      <button onClick={() => handleClick()} className="w-20 h-20 bg-[#fbfbfb] overflow-hidden flex items-end pt-2 pl-2 pr-2 border-[3px] border-[#a2a2a2]">
+      <button 
+        onClick={() => handleClick()}
+        className="w-20 h-20 bg-[#fbfbfb] overflow-hidden flex items-end pt-2 pl-2 pr-2 border-[3px] border-[#a2a2a2]">
         <div className="relative w-28 h-28 flex items-center">
           <div className="w-full h-8 absolute z-10 font-pokemondp font-bold text-2xl">
 

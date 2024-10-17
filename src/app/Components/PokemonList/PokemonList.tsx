@@ -20,7 +20,7 @@ interface IPokemonSearch {
 
 function LoadList({ search, setNewPokemon }: ILoadList) {
   const pokemonsArray = pokemons.results.map((pkm) => (pkm.name))
-  const pokemonList = pokemons.results.filter((pkm) => (pkm.name.startsWith(search)))
+  const pokemonList = pokemons.results.filter((pkm) => (pkm.name.startsWith(search.toLowerCase())))
   return (
     <>
       {pokemonList.map((pkm, index) => (
