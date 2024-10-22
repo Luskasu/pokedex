@@ -2,7 +2,7 @@ type Types = {
   [key: string]: number
 }
 
-export const typeSpritesUrl: string = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-iv/heartgold-soulsilver'
+export const typeSpritesUrl: string = 'https://raw.githubusercontent.com/PokeAPI/sprites/refs/heads/master/sprites/types/generation-viii/sword-shield'
 
 export const typesID: Types = {
   'normal': 1,

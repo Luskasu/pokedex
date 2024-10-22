@@ -37,14 +37,17 @@ export default function PokemonList({ setNewPokemon }: IPokemonList) {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center mt-5">
-      <div className="h-5 flex items-center">
+    <div className="flex flex-col justify-center items-center mb-1">
+      <div className="h-5 flex items-center m-2">
         <div className="bg-[#616161] rounded-md font-pokemondp text-lg flex items-center">
-          <input
-            onChange={(event) => HandleChange(event)}
-            className=" bg-[#616161] w-64 text-center text-xl rounded-l-md text-[#fbfbfb]"
-            placeholder="Search pokemon"
-          />
+        
+            <input
+              onChange={(event) => HandleChange(event)}
+              className=" bg-[#616161] w-64 text-center text-xl rounded-l-md text-[#fbfbfb]"
+              placeholder="Search pokemon"
+            />
+          
+          
           <div className="w-10 pl-3">
             <Image
               src={searchIcon}
