@@ -18,13 +18,13 @@ export default function EvolutionIcon({ pokemonName, condition }: IEvolutionIcon
 
   return (
     <div className="flex items-center">
-      {condition ?
+      {condition[0] !== "" ?
         <div className="">
           ➔
         </div> : ""}
 
       <div className="rounded-full bg-slate-100 items-center text-center font-pokemondp text-base w-[102px] h-24 m-1 relative flex flex-col ">
-        {condition ? <div className="w-32 h-12">
+        {condition[0] !== "" ? <div className="w-32 h-12">
           {condition.map((item, index) => (
             <p className="h-3" key={index}>{item}</p>
           ))}

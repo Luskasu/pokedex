@@ -38,13 +38,13 @@ export default function EvolutionCard() {
   const evolution = usePokemon()?.evolution?.chain
 
   return (
-    <div className="pr-3 pl-3 pt-1 bg-[#eb3030] border-4 border-[#595959] flex flex-col items-center rounded-md">
+    <div className="pr-3 pl-3 pt-1 bg-[#eb3030] border-2 border-[#595959] flex flex-col items-center rounded-md">
       <p className="font-pokemondp font-outline-1 mb-2">Evolution Chart</p>
       <div className="flex items-center">
         <div>
           <EvolutionIcon
             pokemonName={evolution?.species.name}
-            condition="" />
+            condition={[""]} />
         </div>
 
         <div>
