@@ -1,8 +1,9 @@
 import { createContext, ReactNode, useContext, useState } from "react";
+import { stat, type, ability, chain} from "../Interfaces"
 
 interface pokemonContextProps {
   pokemon: {
-    abilities: [object, object?];
+    abilities: ability[];
     base_experience: number;
     cries: object;
     forms: object;
@@ -22,24 +23,19 @@ interface pokemonContextProps {
     sprites: {
       front_default: string;
     },
-    stats:
-    {
-      base_stat: number,
-      effort: number,
-      stat: {
-        name: string,
-        url: string
-      }
-    }[]
+    stats: stat[]
 
     types: [
-      { type: { name: string } },
-      { type: { name: string } }?
+      type,
+      type?
     ];
     weight: number;
   };
   setPokemon: (value: object) => void;
   species: {
+    evolution_chain: {
+      url: string,
+    },
     genera:
     {
       genus: string,
@@ -60,6 +56,10 @@ interface pokemonContextProps {
     }[]
   };
   setSpecies: (value: object) => void;
+  evolution : {
+    chain: chain;
+  } | undefined;
+  setEvolution :(value: object) => void;
 }
 
 
@@ -72,9 +72,11 @@ const pokemonContext = createContext<pokemonContextProps | undefined>(undefined)
 export function PokemonProvider({ children }: pokemonProviderProps) {
   const [pokemon, setPokemon] = useState(Object);
   const [species, setSpecies] = useState(Object);
+  const [evolution, setEvolution] = useState(Object)
   
+
   return (
-    <pokemonContext.Provider value={{ pokemon, setPokemon, species, setSpecies }}>
+    <pokemonContext.Provider value={{ pokemon, setPokemon, species, setSpecies, evolution, setEvolution }}>
       {children}
     </pokemonContext.Provider>
   );

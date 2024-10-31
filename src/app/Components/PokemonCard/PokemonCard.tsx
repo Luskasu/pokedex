@@ -9,6 +9,7 @@ import FootPrint from "./FootPrint";
 import HtWt from "./HtWt";
 import TextBox from "./TextBox";
 import { usePokemon } from "@/app/Contexts/PokemonContext";
+import GetEvolutionChain from "@/app/lib/api/endpoints/GetEvolutionChain";
 
 export interface IPokemonCard {
   name: string;
@@ -23,12 +24,17 @@ export default function PokemonCard({ name }: IPokemonCard) {
       pokemon?.setPokemon(data);
     }
     fetchPokemon();
-
     async function fetchSpecies() {
       const data = await GetSpecies({ name });
       pokemon?.setSpecies(data);
     }
+    
     fetchSpecies();
+    async function fetchEvolution() {
+      const data = await GetEvolutionChain(pokemon?.species?.evolution_chain?.url)
+      pokemon?.setEvolution(data)
+    }
+    fetchEvolution();
   }, [name, pokemon]);
 
   return (

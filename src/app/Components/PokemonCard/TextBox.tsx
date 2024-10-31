@@ -20,7 +20,6 @@ export default function TextBox({ species }: FlavorText) {
   try {
     const textObj = species?.flavor_text_entries.filter(
       (txt) => (txt.language.name === "en" && txt.version.name === "x"))
-    console.log(textObj[0].flavor_text)
     flavorText = textObj[0].flavor_text;
   }
   catch (error) {

@@ -1,9 +1,7 @@
 'use client'
 import PokemonCard from "./Components/PokemonCard/PokemonCard";
-import PokemonList from "./Components/PokemonList/PokemonList";
 import { useState } from "react"
 import { PokemonProvider } from "./Contexts/PokemonContext";
-import DetailsCard from "./Components/DetailsCard/DetailsCard";
 import NavigationPanel from "./Components/DetailsCard/NavigationPanel";
 
 export default function Home() {
@@ -14,10 +12,12 @@ export default function Home() {
       <main className="bg-[#fbfbfb] w-[450px] h-screen pt-4 pb-4 flex flex-col justify-between">
 
         <PokemonProvider>
+          <div className="">
+            <PokemonCard name={selectedPokemon} />
+            <NavigationPanel setSelectedPokemon= {setSelectedPokemon}/>
+          </div>
 
-          <PokemonCard name={selectedPokemon} />
-          <NavigationPanel/>
-          <PokemonList setNewPokemon={setSelectedPokemon} />
+
 
 
         </PokemonProvider>
