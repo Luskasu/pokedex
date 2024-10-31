@@ -21,7 +21,7 @@ export interface ability {
 }
 
 export interface evolution_detail {
-  gender: string,
+  gender: "1" | "2",
   held_item: string,
   item: {
     name: string, 

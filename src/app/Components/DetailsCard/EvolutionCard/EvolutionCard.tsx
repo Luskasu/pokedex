@@ -5,9 +5,9 @@ import { evolution_detail } from "@/app/Interfaces";
 
 function getCondition(detail: evolution_detail) {
   let conditions: string[] = []
-  if (!detail) return ""
+  if (!detail) return [""]
   if (detail.gender) {
-    let genders = {
+    const genders = {
       "1": "female",
       "2": "Male"
     }
@@ -31,7 +31,7 @@ function getCondition(detail: evolution_detail) {
   }
 
 
-  return conditions.join(', ')
+  return conditions
 }
 
 export default function EvolutionCard() {
