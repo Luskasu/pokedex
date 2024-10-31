@@ -30,7 +30,7 @@ export default function EvolutionIcon({ pokemonName, condition }: IEvolutionIcon
           ))}
         </div> : "(Base)"}
         <Image
-          src={`/images/miniatures/${pokemonName}.png`}
+          src={`https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/${pokemonName}.png`}
           alt={pokemonName || ""}
           layout="fill"
           objectFit="contain"
