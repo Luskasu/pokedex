@@ -2,7 +2,7 @@ import Image from "next/image"
 
 interface IEvolutionIcon {
   pokemonName: string | undefined
-  condition: string | string[]
+  condition: string[]
 
 }
 
